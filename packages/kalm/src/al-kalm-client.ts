@@ -97,7 +97,7 @@ export class AlKalmClientInstance implements AlValidationSchemaProvider {
    * /kalm/v1/{account_id}/query/tic_mitre_classification
    * @returns mitre classification
    */
-  public getMitreClassification(accountId: string) {
+  public getMitreClassification(accountId: string): Promise<{column_info: {}, rows: []}> {
     return this.client.get({
         service_stack: AlLocation.InsightAPI,
         service_name: this.serviceName,
